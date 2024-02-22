@@ -25,7 +25,7 @@ app.get('/', (req, res) => {
   res.send('Hello World!');
 });
 
-const UserRoute = require('./routes/User');
+const UserRoute = require('./routes/UserRoutes');
 app.use('/user', UserRoute);
 
 app.listen(port, () => {

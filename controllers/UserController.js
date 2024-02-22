@@ -1,7 +1,6 @@
 const UserModel = require('../models/user');
 // Create and Save a new user
 exports.create = async (req, res) => {
-  console.log(req);
   if (!req.body.email && !req.body.firstName && !req.body.lastName && !req.body.phone) {
     res.status(400).send({ message: 'Content can not be empty!' });
   }
@@ -27,6 +26,7 @@ exports.create = async (req, res) => {
       });
     });
 };
+
 // Retrieve all users from the database.
 exports.findAll = async (req, res) => {
   try {
@@ -36,6 +36,7 @@ exports.findAll = async (req, res) => {
     res.status(404).json({ message: error.message });
   }
 };
+
 // Find a single User with an id
 exports.findOne = async (req, res) => {
   try {
@@ -45,6 +46,7 @@ exports.findOne = async (req, res) => {
     res.status(404).json({ message: error.message });
   }
 };
+
 // Update a user by the id in the request
 exports.update = async (req, res) => {
   if (!req.body) {
