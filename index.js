@@ -28,6 +28,9 @@ app.get('/', (req, res) => {
 const UserRoute = require('./routes/UserRoutes');
 app.use('/user', UserRoute);
 
+const ProjectRoute = require('./routes/ProjectRoutes');
+app.use('/project', ProjectRoute);
+
 app.listen(port, () => {
   console.log(`Example app listening on port ${port}`);
 });
